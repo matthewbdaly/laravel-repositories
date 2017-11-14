@@ -73,7 +73,7 @@ abstract class Base implements AbstractRepositoryInterface
      * Update row
      *
      * @param integer $id
-     * @param array $input
+     * @param array   $input
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function update($id, array $input)
@@ -95,7 +95,7 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Get rows matching parameters
      *
-     * @param array $parameters
+     * @param array  $parameters
      * @param string $field
      * @param string $order
      * @return \Illuminate\Database\Eloquent\Collection
@@ -115,7 +115,7 @@ abstract class Base implements AbstractRepositoryInterface
      * Get a single row matching parameters
      *
      * @param integer $id
-     * @param array $parameters
+     * @param array   $parameters
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function findWhere($id, array $parameters)
@@ -129,7 +129,7 @@ abstract class Base implements AbstractRepositoryInterface
      * Get a single row matching parameters, or throw a 404
      *
      * @param integer $id
-     * @param array $parameters
+     * @param array   $parameters
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function findWhereOrFail($id, array $parameters)
