@@ -4,6 +4,9 @@ namespace Matthewbdaly\LaravelRepositories\Repositories;
 
 use Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface;
 
+/**
+ * Base repository
+ */
 abstract class Base implements AbstractRepositoryInterface
 {
     /**
