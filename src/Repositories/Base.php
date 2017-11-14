@@ -161,6 +161,6 @@ abstract class Base implements AbstractRepositoryInterface
      */
     public function getModel()
     {
-        return $this->model;
+        return get_class($this->model);
     }
 }
