@@ -1,0 +1,19 @@
+{
+    "name": "matthewbdaly/laravel-repositories",
+    "description": "A base repository class and interface, together with a caching decorator. Extend them for use in your own projects.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^6.4",
+        "mockery/mockery": "^1.0",
+        "psy/psysh": "^0.8.14",
+        "squizlabs/php_codesniffer": "^3.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Daly",
+            "email": "matthewbdaly@gmail.com"
+        }
+    ],
+    "require": {}
+}
