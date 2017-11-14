@@ -38,10 +38,10 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Get single row
      *
-     * @param integer $id
+     * @param integer $id The object ID.
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function find($id)
+    public function find(int $id)
     {
         $response = $this->model->with($this->with)->find($id);
         $this->with = [];
@@ -51,10 +51,10 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Get single row, or throw a 404
      *
-     * @param integer $id
+     * @param integer $id The object ID.
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function findOrFail($id)
+    public function findOrFail(int $id)
     {
         $response = $this->model->with($this->with)->findOrFail($id);
         $this->with = [];
@@ -64,7 +64,7 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Create row
      *
-     * @param array $input
+     * @param array $input The input data.
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function create(array $input)
@@ -75,11 +75,11 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Update row
      *
-     * @param integer $id
-     * @param array   $input
+     * @param integer $id    The object ID.
+     * @param array   $input The input data.
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function update($id, array $input)
+    public function update(int $id, array $input)
     {
         return $this->model->find($id)->update($input);
     }
@@ -87,10 +87,10 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Delete row
      *
-     * @param integer $id
+     * @param integer $id The object ID.
      * @return null
      */
-    public function delete($id)
+    public function delete(int $id)
     {
         return $this->model->destroy($id);
     }
@@ -98,12 +98,12 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Get rows matching parameters
      *
-     * @param array  $parameters
-     * @param string $field
-     * @param string $order
+     * @param array  $parameters The parameters.
+     * @param string $field      The field.
+     * @param string $order      The order.
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function where(array $parameters, $field = null, $order = null)
+    public function where(array $parameters, string $field = null, string $order = null)
     {
         $query = $this->model->with($this->with)->where($parameters);
         if ($order) {
@@ -117,11 +117,11 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Get a single row matching parameters
      *
-     * @param integer $id
-     * @param array   $parameters
+     * @param integer $id         The object ID.
+     * @param array   $parameters The parameters.
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function findWhere($id, array $parameters)
+    public function findWhere(int $id, array $parameters)
     {
         $response = $this->model->with($this->with)->where($parameters)->find($id);
         $this->with = [];
@@ -131,11 +131,11 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Get a single row matching parameters, or throw a 404
      *
-     * @param integer $id
-     * @param array   $parameters
+     * @param integer $id         The object ID.
+     * @param array   $parameters The parameters.
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function findWhereOrFail($id, array $parameters)
+    public function findWhereOrFail(int $id, array $parameters)
     {
         $response = $this->model->with($this->with)->where($parameters)->findOrFail($id);
         $this->with = [];
@@ -145,7 +145,7 @@ abstract class Base implements AbstractRepositoryInterface
     /**
      * Set includes
      *
-     * @param array $input
+     * @param array $tables The tables to include.
      * @return \Matthewbdaly\LaravelRepositories\Repositories\Base
      */
     public function with(array $tables)
