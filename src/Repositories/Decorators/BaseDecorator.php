@@ -108,12 +108,12 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     /**
      * Get rows matching parameters
      *
-     * @param array  $parameters
-     * @param string $field
-     * @param string $order
+     * @param array  $parameters The parameters.
+     * @param string $field      The field.
+     * @param string $order      The order.
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function where(array $parameters, $field = null, $order = null)
+    public function where(array $parameters, string $field = null, string $order = null)
     {
         $key = "";
         foreach ($parameters as $k => $v) {
@@ -133,11 +133,11 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     /**
      * Get a single row matching parameters
      *
-     * @param integer $id
-     * @param array   $parameters
+     * @param integer $id         The object ID.
+     * @param array   $parameters The parameters.
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function findWhere($id, array $parameters)
+    public function findWhere(int $id, array $parameters)
     {
         $key = $id . "_";
         foreach ($parameters as $k => $v) {
