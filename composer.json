@@ -3,6 +3,7 @@
     "description": "A base repository class and interface, together with a caching decorator. Extend them for use in your own projects.",
     "type": "library",
     "require-dev": {
+        "orchestra/testbench": "^3.5",
         "phpunit/phpunit": "^6.4",
         "mockery/mockery": "^1.0",
         "psy/psysh": "^0.8.14",
