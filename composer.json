@@ -2,6 +2,7 @@
     "name": "matthewbdaly/laravel-repositories",
     "description": "A base repository class and interface, together with a caching decorator. Extend them for use in your own projects.",
     "type": "library",
+    "keywords": ["laravel", "repositories", "decorators", "caching", "cache"],
     "require-dev": {
         "orchestra/testbench": "^3.5",
         "phpunit/phpunit": "^6.4",
