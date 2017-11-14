@@ -151,11 +151,11 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     /**
      * Get a single row matching parameters, or throw a 404
      *
-     * @param integer $id
-     * @param array   $parameters
+     * @param integer $id         The object ID.
+     * @param array   $parameters The parameters.
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function findWhereOrFail($id, array $parameters)
+    public function findWhereOrFail(int $id, array $parameters)
     {
         $key = $id . "_";
         foreach ($parameters as $k => $v) {
@@ -169,7 +169,7 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     /**
      * Set includes
      *
-     * @param array $input
+     * @param array $tables The tables to include.
      * @return \Matthewbdaly\LaravelRepositories\Repositories\Base
      */
     public function with(array $tables)
