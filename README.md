@@ -1,5 +1,7 @@
 # laravel-repositories
 
+[![Build Status](https://travis-ci.org/matthewbdaly/laravel-repositories.svg?branch=master)](https://travis-ci.org/matthewbdaly/laravel-repositories)
+[![Coverage Status](https://coveralls.io/repos/github/matthewbdaly/laravel-repositories/badge.svg?branch=master)](https://coveralls.io/github/matthewbdaly/laravel-repositories?branch=master)
 A base repository class and interface, together with a caching decorator. Extend them for use in your own projects.
 
 The base interface is `Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface`. Your repositories should have interfaces that extend this, to facilitate type-hinting them.
