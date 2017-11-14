@@ -153,4 +153,14 @@ abstract class Base implements AbstractRepositoryInterface
         $this->with = $tables;
         return $this;
     }
+
+    /**
+     * Get model name
+     *
+     * @return string
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
 }

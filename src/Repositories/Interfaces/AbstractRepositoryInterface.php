@@ -87,4 +87,11 @@ interface AbstractRepositoryInterface
      * @return \Matthewbdaly\LaravelRepositories\Repositories\Base
      */
     public function with(array $tables);
+
+    /**
+     * Get model name
+     *
+     * @return string
+     */
+    public function getModel();
 }

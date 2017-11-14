@@ -182,7 +182,7 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
      *
      * @return string
      */
-    protected function getModel()
+    public function getModel()
     {
         return $this->model;
     }
