@@ -72,6 +72,15 @@ interface AbstractRepositoryInterface
     public function findWhere(int $id, array $parameters);
 
     /**
+     * Get a single row matching parameters, or throw a 404
+     *
+     * @param integer $id         The object ID.
+     * @param array   $parameters The parameters.
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function findWhereOrFail(int $id, array $parameters);
+
+    /**
      * Set includes
      *
      * @param array $tables The tables to include.
