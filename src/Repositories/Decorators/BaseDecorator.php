@@ -24,13 +24,6 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     protected $cache;
 
     /**
-     * The model to be used by the repository
-     *
-     * @var object
-     */
-    protected $model;
-
-    /**
      * Get all rows
      *
      * @return \Illuminate\Database\Eloquent\Collection
@@ -184,6 +177,6 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
      */
     public function getModel()
     {
-        return $this->model;
+        return $this->repository->getModel();
     }
 }

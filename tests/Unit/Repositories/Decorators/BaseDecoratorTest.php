@@ -15,6 +15,7 @@ class BaseDecoratorTest extends TestCase
     public function testAll()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $cache->shouldReceive('tags')->with('Dummy')->once()->andReturn($cache);
@@ -30,6 +31,7 @@ class BaseDecoratorTest extends TestCase
     public function testFind()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $cache->shouldReceive('tags')->with('Dummy')->once()->andReturn($cache);
@@ -45,6 +47,7 @@ class BaseDecoratorTest extends TestCase
     public function testFindOrFail()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $cache->shouldReceive('tags')->with('Dummy')->once()->andReturn($cache);
@@ -60,6 +63,7 @@ class BaseDecoratorTest extends TestCase
     public function testCreate()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $repo->shouldReceive('create')->with([])->once()->andReturn([]);
@@ -76,6 +80,7 @@ class BaseDecoratorTest extends TestCase
     public function testUpdate()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $repo->shouldReceive('update')->with(1, [])->once()->andReturn([]);
@@ -92,6 +97,7 @@ class BaseDecoratorTest extends TestCase
     public function testDelete()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $repo->shouldReceive('delete')->with(1)->once()->andReturn(true);
@@ -108,6 +114,7 @@ class BaseDecoratorTest extends TestCase
     public function testWhere()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $cache->shouldReceive('tags')->once()->andReturn($cache);
@@ -123,6 +130,7 @@ class BaseDecoratorTest extends TestCase
     public function testWhereWithOrder()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $cache->shouldReceive('tags')->once()->andReturn($cache);
@@ -138,6 +146,7 @@ class BaseDecoratorTest extends TestCase
     public function testFindWhere()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $cache->shouldReceive('tags')->once()->andReturn($cache);
@@ -153,6 +162,7 @@ class BaseDecoratorTest extends TestCase
     public function testFindWhereOrFail()
     {
         $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
         $cache = m::mock('Illuminate\Contracts\Cache\Repository');
         $decorator = new DummyDecorator($repo, $cache);
         $cache->shouldReceive('tags')->once()->andReturn($cache);
