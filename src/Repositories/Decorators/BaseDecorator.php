@@ -179,4 +179,28 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     {
         return $this->repository->getModel();
     }
+
+    /**
+     * Get or create row
+     *
+     * @param array $input The input data.
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function firstOrCreate(array $input)
+    {
+        $this->cache->tags($this->getModel())->flush();
+        return $this->repository->firstOrCreate($input);
+    }
+
+    /**
+     * Update or create row
+     *
+     * @param array $input The input data.
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function updateOrCreate(array $input)
+    {
+        $this->cache->tags($this->getModel())->flush();
+        return $this->repository->updateOrCreate($input);
+    }
 }

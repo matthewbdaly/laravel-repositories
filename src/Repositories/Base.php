@@ -163,4 +163,26 @@ abstract class Base implements AbstractRepositoryInterface
     {
         return get_class($this->model);
     }
+
+    /**
+     * Get or create row
+     *
+     * @param array $input The input data.
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function firstOrCreate(array $input)
+    {
+        return $this->model->firstOrCreate($input);
+    }
+
+    /**
+     * Update or create row
+     *
+     * @param array $input The input data.
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function updateOrCreate(array $input)
+    {
+        return $this->model->updateOrCreate($input);
+    }
 }

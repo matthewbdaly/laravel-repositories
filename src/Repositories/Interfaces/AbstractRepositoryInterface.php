@@ -94,4 +94,20 @@ interface AbstractRepositoryInterface
      * @return string
      */
     public function getModel();
+
+    /**
+     * Get or create row
+     *
+     * @param array $input The input data.
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function firstOrCreate(array $input);
+
+    /**
+     * Update or create row
+     *
+     * @param array $input The input data.
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function updateOrCreate(array $input);
 }

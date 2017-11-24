@@ -173,4 +173,40 @@ class BaseRepositoryTest extends TestCase
         $repo = new DummyRepository($model);
         $this->assertEquals(true, $repo->with(['example'])->find(1));
     }
+
+    /**
+     * Test first or create
+     *
+     * @return void
+     */
+    public function testFirstOrCreate()
+    {
+        $data = [
+            'foo' => 1,
+            'bar' => 2,
+            'baz' => 3
+        ];
+        $model = m::mock('Illuminate\Database\Eloquent\Model');
+        $model->shouldReceive('firstOrCreate')->with($data)->once()->andReturn(true);
+        $repo = new DummyRepository($model);
+        $this->assertEquals(true, $repo->firstOrCreate($data));
+    }
+
+    /**
+     * Test update or create
+     *
+     * @return void
+     */
+    public function testUpdateOrCreate()
+    {
+        $data = [
+            'foo' => 1,
+            'bar' => 2,
+            'baz' => 3
+        ];
+        $model = m::mock('Illuminate\Database\Eloquent\Model');
+        $model->shouldReceive('updateOrCreate')->with($data)->once()->andReturn(true);
+        $repo = new DummyRepository($model);
+        $this->assertEquals(true, $repo->updateOrCreate($data));
+    }
 }

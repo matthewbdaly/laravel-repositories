@@ -184,4 +184,38 @@ class BaseDecoratorTest extends TestCase
         $repo->shouldReceive('find')->with(1)->once()->andReturn(true);
         $this->assertEquals(true, $repo->with(['example'])->find(1));
     }
+
+    /**
+     * Test first or create
+     *
+     * @return void
+     */
+    public function testFirstOrCreate()
+    {
+        $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
+        $cache = m::mock('Illuminate\Contracts\Cache\Repository');
+        $decorator = new DummyDecorator($repo, $cache);
+        $repo->shouldReceive('firstOrCreate')->with([])->once()->andReturn([]);
+        $cache->shouldReceive('tags')->once()->andReturn($cache);
+        $cache->shouldReceive('flush')->once();
+        $this->assertEquals([], $decorator->firstOrCreate([]));
+    }
+
+    /**
+     * Test update or create
+     *
+     * @return void
+     */
+    public function testUpdateOrCreate()
+    {
+        $repo = m::mock('Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface');
+        $repo->shouldReceive('getModel')->once()->andReturn('Dummy');
+        $cache = m::mock('Illuminate\Contracts\Cache\Repository');
+        $decorator = new DummyDecorator($repo, $cache);
+        $repo->shouldReceive('updateOrCreate')->with([])->once()->andReturn([]);
+        $cache->shouldReceive('tags')->once()->andReturn($cache);
+        $cache->shouldReceive('flush')->once();
+        $this->assertEquals([], $decorator->updateOrCreate([]));
+    }
 }
