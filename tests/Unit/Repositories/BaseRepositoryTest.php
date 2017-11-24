@@ -209,4 +209,16 @@ class BaseRepositoryTest extends TestCase
         $repo = new DummyRepository($model);
         $this->assertEquals(true, $repo->updateOrCreate($data));
     }
+
+    /**
+     * Test get model
+     *
+     * @return void
+     */
+    public function testGetModel()
+    {
+        $model = m::mock('Illuminate\Database\Eloquent\Model');
+        $repo = new DummyRepository($model);
+        $this->assertEquals('Mockery_0_Illuminate_Database_Eloquent_Model', $repo->getModel());
+    }
 }
