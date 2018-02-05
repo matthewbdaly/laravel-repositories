@@ -15,14 +15,14 @@ class ContractMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'make:repositorycontract {name: The required name of the contract interface}';
+    protected $signature = 'make:repository:contract {name : The required name of the repository contract}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create an interface for a repository';
+    protected $description = 'Create a repository interface';
 
     /**
      * The type of class being generated.
