@@ -38,7 +38,7 @@ class RepositoryMakeCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/stubs/controller.stub';
+        return __DIR__.'/stubs/repository.stub';
     }
 
     /**
