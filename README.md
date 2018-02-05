@@ -42,3 +42,12 @@ class AppServiceProvider extends ServiceProvider
     }
 }
 ```
+
+Artisan tasks
+-------------
+
+This package implements the following Artisan tasks to help writing boilerplate:
+
+* `make:repository` - Makes a repository for the model passed, ie `php artisan make:repository Foo`
+* `make:repository:contract` - Makes a contract for the model passed, ie `php artisan make:repository:contract Foo`
+* `make:repository:decorator` - Makes a decorator for the model passed, ie `php artisan make:repository:decorator Foo`
