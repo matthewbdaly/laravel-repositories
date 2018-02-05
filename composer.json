@@ -9,6 +9,7 @@
         "mockery/mockery": "^1.0",
         "psy/psysh": "^0.8.14",
         "satooshi/php-coveralls": "^1.0",
+        "matthewbdaly/artisan-standalone": "0.0.*",
         "squizlabs/php_codesniffer": "^3.1"
     },
     "license": "MIT",
@@ -28,5 +29,10 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
     }
 }
