@@ -3,8 +3,8 @@
 namespace DummyNamespace;
 
 use Matthewbdaly\LaravelRepositories\Repositories\Base;
-use DummyRootNamespace\Contracts\Repositories\DummyClass as DummyClassContract;
-use DummyRootNamespace\Eloquent\Models\DummyClass as Model;
+use DummyRootNamespaceContracts\Repositories\DummyClass as DummyClassContract;
+use DummyRootNamespaceEloquent\Models\DummyClass as Model;
 
 class DummyClass extends Base implements DummyClassContract
 {
