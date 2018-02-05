@@ -4,7 +4,7 @@ namespace Matthewbdaly\LaravelRepositories\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class ContractMake extends Command
+class ContractMakeCommand extends Command
 {
     /**
      * The name and signature of the console command.
