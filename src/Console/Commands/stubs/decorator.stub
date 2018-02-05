@@ -1,0 +1,16 @@
+<?php
+
+namespace DummyNamespace;
+
+use Matthewbdaly\LaravelRepositories\Repositories\Decorators\BaseDecorator;
+use DummyRootNamespaceContracts\Repositories\DummyClass as DummyClassContract;
+use Illuminate\Contracts\Cache\Repository as Cache;
+
+class DummyClass extends BaseDecorator implements DummyClassContract
+{
+    public function __construct(DummyClassContract $repository, Cache $cache)
+    {
+        $this->repository = $repository;
+        $this->cache = $cache;
+    }
+}
