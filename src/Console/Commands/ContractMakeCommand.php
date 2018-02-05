@@ -2,9 +2,10 @@
 
 namespace Matthewbdaly\LaravelRepositories\Console\Commands;
 
-use Illuminate\Console\Command;
+use Illuminate\Console\GeneratorCommand;
+use Symfony\Component\Console\Input\InputArgument;
 
-class ContractMakeCommand extends Command
+class ContractMakeCommand extends GeneratorCommand
 {
     /**
      * The name and signature of the console command.
