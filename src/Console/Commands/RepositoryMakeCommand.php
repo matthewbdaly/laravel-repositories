@@ -49,7 +49,7 @@ class RepositoryMakeCommand extends GeneratorCommand
     protected function getArguments()
     {
         return [
-            ['name', InputArgument::REQUIRED, 'The name of the controller.'],
+            ['name', InputArgument::REQUIRED, 'The name of the repository.'],
         ];
     }
 
