@@ -5,6 +5,9 @@ namespace Matthewbdaly\LaravelRepositories\Console\Commands;
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputArgument;
 
+/**
+ * Builds repository contracts
+ */
 class ContractMakeCommand extends GeneratorCommand
 {
     /**
@@ -26,7 +29,7 @@ class ContractMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $type = 'Repository';
+    protected $type = 'Contract';
 
     /**
      * Get the stub file for the generator.
