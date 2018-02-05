@@ -1,0 +1,9 @@
+<?php
+
+namespace DummyNamespace;
+
+use Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface;
+
+interface DummyClass extends AbstractRepositoryInterface
+{
+}

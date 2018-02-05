@@ -3,6 +3,7 @@
 namespace Matthewbdaly\LaravelRepositories\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Matthewbdaly\LaravelRepositories\Console\Commands\ContractMakeCommand;
 use Matthewbdaly\LaravelRepositories\Console\Commands\RepositoryMakeCommand;
 
 class LaravelRepositoriesServiceProvider extends ServiceProvider
@@ -16,6 +17,7 @@ class LaravelRepositoriesServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
+                ContractMakeCommand::class,
                 RepositoryMakeCommand::class,
             ]);
         }
