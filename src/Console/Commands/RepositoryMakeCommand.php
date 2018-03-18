@@ -15,7 +15,7 @@ class RepositoryMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'make:repository {name : The required name of the repository class}';
+    protected $signature = 'make:repository {name : The required name of the repository class} {--all : Include contract and decorator}';
 
     /**
      * The console command description.
@@ -62,5 +62,19 @@ class RepositoryMakeCommand extends GeneratorCommand
     protected function getDefaultNamespace($rootNamespace)
     {
         return $rootNamespace.'\Eloquent\Repositories';
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return bool|null
+     */
+    public function handle()
+    {
+        parent::handle();
+        if ($this->option('all')) {
+            $this->call('make:repository:contract '.$this->argument('name'));
+            $this->call('make:repository:decorator '.$this->argument('name'));
+        }
     }
 }
