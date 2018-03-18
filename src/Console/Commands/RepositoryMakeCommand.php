@@ -73,8 +73,12 @@ class RepositoryMakeCommand extends GeneratorCommand
     {
         parent::handle();
         if ($this->option('all')) {
-            $this->call('make:repository:contract '.$this->argument('name'));
-            $this->call('make:repository:decorator '.$this->argument('name'));
+            $this->call('make:repository:contract', [
+                'name' => $this->argument('name')
+            ]);
+            $this->call('make:repository:decorator', [
+                'name' => $this->argument('name')
+            ]);
         }
     }
 }
