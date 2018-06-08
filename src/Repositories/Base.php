@@ -3,6 +3,7 @@
 namespace Matthewbdaly\LaravelRepositories\Repositories;
 
 use Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Base repository
@@ -184,5 +185,41 @@ abstract class Base implements AbstractRepositoryInterface
     public function updateOrCreate(array $input)
     {
         return $this->model->updateOrCreate($input);
+    }
+
+    /**
+     * Attach a model
+     *
+     * @param mixed $model The first model.
+     * @param string $relation The relationship on the first model.
+     * @param \Illuminate\Database\Eloquent\Model $value The model to attach.
+     *
+     * @return void
+     */
+    public function attach($model, string $relation, Model $value)
+    {
+        if (! $model instanceof Model) {
+            $model = $this->find($model);
+        }
+
+        $model->$relation()->attach($value);
+    }
+
+    /**
+     * Detach a model
+     *
+     * @param mixed $model The first model.
+     * @param string $relation The relationship on the first model.
+     * @param \Illuminate\Database\Eloquent\Model $value The model to attach.
+     *
+     * @return void
+     */
+    public function detach($model, string $relation, Model $value)
+    {
+        if (! $model instanceof Model) {
+            $model = $this->find($model);
+        }
+
+        $model->$relation()->detach($value);
     }
 }

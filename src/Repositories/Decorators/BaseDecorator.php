@@ -3,6 +3,7 @@
 namespace Matthewbdaly\LaravelRepositories\Repositories\Decorators;
 
 use Matthewbdaly\LaravelRepositories\Repositories\Interfaces\AbstractRepositoryInterface;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Base decorator class
@@ -202,5 +203,35 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     {
         $this->cache->tags($this->getModel())->flush();
         return $this->repository->updateOrCreate($input);
+    }
+
+    /**
+     * Attach a model
+     *
+     * @param mixed $model The first model.
+     * @param string $relation The relationship on the first model.
+     * @param \Illuminate\Database\Eloquent\Model $value The model to attach.
+     *
+     * @return void
+     */
+    public function attach($model, string $relation, Model $value)
+    {
+        $this->cache->tags($this->getModel())->flush();
+        return $this->repository->attach($mode, $relation, $value);
+    }
+
+    /**
+     * Detach a model
+     *
+     * @param mixed $model The first model.
+     * @param string $relation The relationship on the first model.
+     * @param \Illuminate\Database\Eloquent\Model $value The model to attach.
+     *
+     * @return void
+     */
+    public function detach($model, string $relation, Model $value)
+    {
+        $this->cache->tags($this->getModel())->flush();
+        return $this->repository->detach($mode, $relation, $value);
     }
 }

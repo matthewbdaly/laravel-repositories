@@ -2,6 +2,8 @@
 
 namespace Matthewbdaly\LaravelRepositories\Repositories\Interfaces;
 
+use Illuminate\Database\Eloquent\Model;
+
 interface AbstractRepositoryInterface
 {
     /**
@@ -110,4 +112,26 @@ interface AbstractRepositoryInterface
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function updateOrCreate(array $input);
+
+    /**
+     * Attach a model
+     *
+     * @param mixed $model The first model.
+     * @param string $relation The relationship on the first model.
+     * @param \Illuminate\Database\Eloquent\Model $value The model to attach.
+     *
+     * @return void
+     */
+    public function attach($model, string $relation, Model $value);
+
+    /**
+     * Detach a model
+     *
+     * @param mixed $model The first model.
+     * @param string $relation The relationship on the first model.
+     * @param \Illuminate\Database\Eloquent\Model $value The model to attach.
+     *
+     * @return void
+     */
+    public function detach($model, string $relation, Model $value);
 }
