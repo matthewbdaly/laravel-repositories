@@ -217,7 +217,7 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     public function attach($model, string $relation, Model $value)
     {
         $this->cache->tags($this->getModel())->flush();
-        return $this->repository->attach($mode, $relation, $value);
+        return $this->repository->attach($model, $relation, $value);
     }
 
     /**
@@ -232,6 +232,6 @@ abstract class BaseDecorator implements AbstractRepositoryInterface
     public function detach($model, string $relation, Model $value)
     {
         $this->cache->tags($this->getModel())->flush();
-        return $this->repository->detach($mode, $relation, $value);
+        return $this->repository->detach($model, $relation, $value);
     }
 }
